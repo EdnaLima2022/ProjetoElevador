@@ -1,0 +1,72 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">
+
+        Utilizando o método de Programação Orientada a Objeto - POO, foi criada uma classe chamada Elevador, com propriedades (atributos) e funções (métodos) simulando um elevador.
+        Esta classe será herdada pelo programa main.
+
+        Nesta classe foram criados os seguintes atributos do Elevador:
+
+        *Capacidade do Elevador: do tipo inteiro. Fixada a quantidade de 9 pessoas para a capacidade do Elevador.
+        *Total de Pessoas: do tipo inteiro, para utilização do controle de pessoas a entrar e sair do Elevador.
+        *Total de Andares: do tipo inteiro. Fixado o total de 6 andares do prédio, os quais o Elevador possa transitar.
+        *Andar: do tipo inteiro, para utilização do controle de subida e descida do Elevador.
+
+        Nesta classe foram criados os seguintes métodos (funções) do Elevador:
+
+        *Inicializar:
+        Este método indica que o Elevador estaria no andar térreo, sem nenhuma pessoa no Elevador. 
+        Assim, os atributos quantidade de pessoas e andar iniciam com zero (0). 
+        Ainda, apresentará uma mensagem ao usuário que ele se encontra no andar térreo.
+
+        *Entrar: 
+        Neste método o programa acrescenta uma pessoa no elevador, desde que ele não esteja com sua capacidade máxima.
+        Assim, há uma clausula IF de verificação se o total de pessoas é menor que a capacidade do elevador.
+        Se for verdadeiro, acrescenta 1 (+=) ao atributo total de pessoas no elevador, se for falso vai para a clausula Else e apresentará mensagem ao usuário que o elevador está cheio.
+
+        *Sair:
+        Neste método o programa diminui uma pessoa no elevador, desde que o elevador tenha pessoa(s).
+        Assim, há uma clausula IF de verificação se o total de pessoas é maior que zero (0).
+        Se for verdadeiro, diminui 1 (-=) ao atributo total de pessoas no elevador, se for falso  vai para a clausula Else e apresentará mensagem ao usuário que o elevador está vazio.
+
+        *Subir:
+        Neste método o programa acrescenta um andar, simulando a subida do elevador, desde que o elevador não esteja no ultimo andar.
+        Assim, há uma clausula IF de verificação se o atributo andar é menor que o total de andares do prédio.
+        Se for verdadeiro, acrescenta 1 (+=) ao atributo andar do elevador, se for falso  vai para a clausula Else e apresentará mensagem ao usuário que o elevador está no ultimo andar.
+
+        *Descer:
+        Neste método o programa diminui um andar, simulando a descida do elevador, desde que o elevador não esteja no térreo.
+        Assim, há uma clausula IF de verificação se o atributo andar é maior que zero (0), que seria o andar térreo do prédio.
+        Se for verdadeiro, diminui 1 (-=) ao atributo andar do elevador, se for falso  vai para a clausula Else e apresentará mensagem ao usuário que o elevador está no térreo.
+
+        Para os métodos Entrar, Sair, Subir e Descer haverá mensagem na tela ao final da verificação IF, informando a quantidade de pessoas no elevador e qual andar se encontra.
+
+        Programa main:
+
+        No programa main foi instanciada a classe novoElevador (new) para utilização dos atributos e métodos criados na classe Elevador.
+        O sistema irá apresentar ao usuário, primeiramente:
+        - O nome da funcionalidade "Elevador": criado atraves de comando Console.WriteLine,
+        - A mensagem indicativa que o usuário encontra-se no térreo: criado atraves de comando Console.WriteLine,
+        - A mensagem para ele selecionar uma opção, com as opções: Entrar, Sair, Subir, Descer ou Finalizar.
+
+        Em conjunto com a mensagem indicativa de que o usuário encontra-se no térreo, o programa chama o método Inicializar, o qual coloca nos 
+        atributos quantidade de pessoas e andar o valor zero (0), conforme mencionado na descrição do método.
+
+        Para a seleção da opção por parte do usuário, foi criado uma condição boleana continuar = true, para entrar na clausula DO.
+        Como já inicia com true, o programa leva para a clausula DO, levando o usuário para a parte de seleção acima informada. 
+        Ao digitar o número de uma das opções: 1 - Entrar, 2 - Sair, 3 - Subir, 4 - Descer, o sistema guarda o número digitado na tela numa string.
+        Ainda, chama a cláusula Switch/Case com esta string, indo para o método criado na classe Elevador inerente à opção escolhida.
+        Caso o usuário digitar um número que não esteja na lista, entra na clausula default, apresentando mensagem de opção inválida.
+        Tanto os números 1, 2, 3 ou 4 quanto número que não esteja na lista, o programa vai para a clausula While, apresentando na tela novamente as opções para seleção, 
+        ou seja, entra no looping de repetição dos comandos. 
+        Caso o usuário digitar a opção 5 - Finalizar, a condição boleana continuar fica com valor false, saindo do looping de repetição.
+
+
+    </h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
